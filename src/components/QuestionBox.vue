@@ -14,7 +14,9 @@
           @click.prevent="selectAnswer(index)"
           :class="[
             !answered && selectedIndex === index ? 'selected' :
-            answered && correctIndex === index ? 'correct' : ''
+            answered && correctIndex === index ? 'correct' :
+            answered && selectedIndex === index && correctIndex !== index ?
+            'incorrect': ''
           ]"
         >
           {{ answer }}
